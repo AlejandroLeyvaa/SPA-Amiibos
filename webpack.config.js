@@ -21,22 +21,22 @@ module.exports = {
         }
       },
       {
-        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|mp3$/,
+        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|mp3|webm$/,
         use: {
           loader: 'url-loader', 
           options: {
-          limit: 90000,
+            limit: 900000,
           }
         }
       },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
+      // {
+      //   test: /\.(png|jpe?g|gif)$/i,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //     },
+      //   ],
+      // },
     ]
   },
   plugins: [

@@ -4,7 +4,6 @@ import Character from "../pages/Character";
 import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
 import Error404 from "../pages/Error404";
-
 const routes = {
   '/': Home,
   '/name': Character,

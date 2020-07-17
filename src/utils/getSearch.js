@@ -1,4 +1,4 @@
-import getData from './getData';
+import getData from '../utils/getData';
 
 class UI {
   addAmiibo(list) {
@@ -18,35 +18,26 @@ class UI {
   }
 }
 
-
-
 const getSearch = document.getElementById('form')
-getSearch.addEventListener('submit', async e =>{
-  e.preventDefault();
-
+getSearch.addEventListener('keyup', async e =>{
+  
   const search = document.getElementById('search').value.toLowerCase();
   
   const data = await getData();
-  // const dataMap = await data.amiibo.map(character => character.name.toLowerCase())
-  
-  const searchCharAt = search.charAt(0).toUpperCase();
+  // Tomamos la primera letra del input y la convertimos en mayuscula
+  const searchCharAt = search.charAt(0).toUpperCase(); 
+  // Cortamos los caracteres escritos despues del primero
   const sliceSearch = search.slice(1, search.length);
+  // Juntamos el primer caracter con el resto
   const concatSearch = searchCharAt + sliceSearch;
-  const dataAmiiboFilter = await data.amiibo.filter(character => character.name == concatSearch)
-  const list = dataAmiiboFilter[0]['character'];
-  // const dataFilter = data.amiibo;
-  // const amiiboFilter = dataFilter.filter(x => x.name == concatSearch)
-  // console.log('Search: ', searchCharAt)
-  // console.log('Slice Search: ', sliceSearch)
+  // Filtramos la lista
+  const dataAmiiboFilter = await data.amiibo.filter(character => character.name == concatSearch);
+  const list = dataAmiiboFilter[0]['character'];  
   console.log('Some Data: ', search)
-  console.log('Concat Search: ', concatSearch)
-  console.log('Search Filter: ', dataAmiiboFilter)
-  console.log('Search Filter Object: ', dataAmiiboFilter[0]['character'])
-  // console.log('Data Map:', dataMap)
-
-
+  
   const ui = new UI();
   ui.addAmiibo(list)
+  e.preventDefault();
 });
 
 export default getSearch;

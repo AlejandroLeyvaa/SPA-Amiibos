@@ -1,4 +1,4 @@
-import logo from '../assets/Amiibo.png'
+import logo from '../assets/Amiibo.png';
 const Header = () => {
   const view = ` 
     <div class="Header__main">

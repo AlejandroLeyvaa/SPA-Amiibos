@@ -10,7 +10,7 @@ const Header = () => {
             </h1>
         </div>
         <div>
-            <img class="Main__logo" src="${logo}" alt="Logo">
+            <img class="Main__logo" src="${logo}" alt="Amiibo Logo">
         </div>
         <div class="Header-nav">
             <a href="#/about/">

@@ -1,3 +1,6 @@
-import getData from '../src/utils/getData';
-window.addEventListener('load', getData);
-console.log('Hola mundo');
+import getData from './utils/getData';
+import router from  './routes/index';
+
+window.addEventListener('load', getData)
+window.addEventListener('load', router)
+window.addEventListener('hashchange', router)

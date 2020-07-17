@@ -1,3 +1,4 @@
+import logo from '../assets/Amiibo.png'
 const Header = () => {
   const view = ` 
     <div class="Header__main">
@@ -9,7 +10,7 @@ const Header = () => {
             </h1>
         </div>
         <div>
-            <img class="Main__logo" src="" alt="Logo">
+            <img class="Main__logo" src="${logo}" alt="Logo">
         </div>
         <div class="Header-nav">
             <a href="#/about/">

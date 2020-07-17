@@ -1,7 +1,10 @@
 const API = 'https://www.amiiboapi.com/api/amiibo/';
-const getData = async () => {
+const NAME = '?name='
+const getData = async (name) => {
+  const apiURL = name ? `${API}${NAME}${name}` : API;
   try {
-    const response = await fetch(API);
+    console.log(`apiURL: ${apiURL}`)
+    const response = await fetch(apiURL);
     const data = await response.json();
     console.log('Datas: ', data);
     return data;

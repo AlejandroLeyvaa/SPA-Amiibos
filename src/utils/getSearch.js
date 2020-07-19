@@ -19,7 +19,7 @@ class UI {
 }
 
 const getSearch = document.getElementById('form')
-getSearch.addEventListener('keyup', async e =>{
+getSearch.addEventListener('submit', async e =>{
   
   const search = document.getElementById('search').value.toLowerCase();
   
